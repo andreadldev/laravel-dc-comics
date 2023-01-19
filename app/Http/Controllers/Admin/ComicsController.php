@@ -50,7 +50,7 @@ class ComicsController extends Controller
     {
         // $comic = Comic::where('id', $id)->first();
         $comics = Comic::all();
-        // return view('data.index', compact('comics'));
+        return view('data.show', compact('comics'));
     }
 
     /**
