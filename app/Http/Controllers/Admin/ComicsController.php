@@ -16,7 +16,7 @@ class ComicsController extends Controller
     public function index()
     {
         $comics = Comic::all();
-        dd($comics);
+        return view('data.index', compact('comics'));
     }
 
     /**
@@ -46,9 +46,11 @@ class ComicsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Comic $comic)
     {
-        //
+        // $comic = Comic::where('id', $id)->first();
+        $comics = Comic::all();
+        // return view('data.index', compact('comics'));
     }
 
     /**
