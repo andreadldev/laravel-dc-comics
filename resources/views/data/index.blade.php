@@ -16,6 +16,7 @@ Index
             <th scope="col">series</th>
             <th scope="col">sale_date</th>
             <th scope="col">type</th>
+            <th scope="col">details</th>
         </tr>
     </thead>
     <tbody>
@@ -29,8 +30,11 @@ Index
             <td>{{$comic->series}}</td>
             <td>{{$comic->sale_date}}</td>
             <td>{{$comic->type}}</td>
+            <td> <a href="{{ route('comics.show', $comic->id) }}"><i class="fa-solid fa-circle-arrow-right fs-4"></i></a></td>
         </tr>
         @endforeach
     </tbody>
 </table>
 @endsection
+
+

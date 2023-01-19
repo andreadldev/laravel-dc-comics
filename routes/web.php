@@ -15,3 +15,7 @@ use App\Http\Controllers\Admin\ComicsController;
 */
 
 Route::resource('comics', ComicsController::class);
+
+Route::get('/', function () {
+    return view('welcome');
+});
