@@ -33,11 +33,9 @@ Index
             <td> 
                 <a href="{{ route('comics.show', $comic->id) }}"><i class="btn text-primary fa-solid fa-eye"></i></a>
                 <a href="{{ route('comics.edit', $comic->id) }}"><i class="btn text-primary fa-solid fa-pencil"></i></a>
-                <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit" class="btn text-danger border-none fw-bold"><i class="fa-solid fa-trash-can"></i></button>
-                </form>
+                <button type="button" class="btn text-danger border-none fw-bold" data-bs-toggle="modal" data-bs-target="#deleteModal">
+                    <i class="fa-solid fa-trash-can"></i>
+                </button>
             </td>
         </tr>
         @endforeach
@@ -46,6 +44,7 @@ Index
 <div class="w-100 d-flex">
     <a href="{{ route('comics.create') }}" class="btn btn-primary ms-auto me-4">+</a>
 </div>
+@include('partials.modal')
 @endsection
 
 
