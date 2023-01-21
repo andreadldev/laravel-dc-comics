@@ -30,11 +30,17 @@ Index
             <td>{{$comic->series}}</td>
             <td>{{$comic->sale_date}}</td>
             <td>{{$comic->type}}</td>
-            <td> <a href="{{ route('comics.show', $comic->id) }}"><i class="fa-solid fa-circle-arrow-right fs-4"></i></a></td>
+            <td> 
+                <a href="{{ route('comics.show', $comic->id) }}"><i class="fa-solid fa-eye"></i></a>
+                <a href="{{ route('comics.edit', $comic->id) }}"><i class="fa-solid fa-pencil"></i></a>
+            </td>
         </tr>
         @endforeach
     </tbody>
 </table>
+<div class="w-100 d-flex">
+    <a href="{{ route('comics.create') }}" class="btn btn-primary ms-auto me-4">+</a>
+</div>
 @endsection
 
 
