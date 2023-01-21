@@ -31,8 +31,13 @@ Index
             <td>{{$comic->sale_date}}</td>
             <td>{{$comic->type}}</td>
             <td> 
-                <a href="{{ route('comics.show', $comic->id) }}"><i class="fa-solid fa-eye"></i></a>
-                <a href="{{ route('comics.edit', $comic->id) }}"><i class="fa-solid fa-pencil"></i></a>
+                <a href="{{ route('comics.show', $comic->id) }}"><i class="btn text-primary fa-solid fa-eye"></i></a>
+                <a href="{{ route('comics.edit', $comic->id) }}"><i class="btn text-primary fa-solid fa-pencil"></i></a>
+                <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn text-danger border-none fw-bold"><i class="fa-solid fa-trash-can"></i></button>
+                </form>
             </td>
         </tr>
         @endforeach
